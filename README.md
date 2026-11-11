@@ -38,6 +38,23 @@ As a user:
 3. I can mark a plant as "sold out".
 4. I can search for plants by their name and see a filtered list of plants.
 
+## Completed Features
+
+The following functionality has been implemented:
+
+- **Fetch all plants on load** – `useEffect` in `App` fetches `GET /plants` and stores them in state.
+- **Add a new plant** – `NewPlantForm` submits `POST /plants` and adds the created plant to state so it renders immediately.
+- **Mark sold out** – `PlantCard` toggles a plant's sold-out status, conditionally rendering "In Stock" vs "Out of Stock".
+- **Search** – `Search` tracks its input value and `App` filters the plant list by name using a case-insensitive `includes()`.
+
+## Running Tests
+
+Run `npm run test` to execute the full test suite (vitest).
+
+## Demo
+
+![Demo GIF](./demo.gif)
+
 ### Endpoints for Core Deliverables
 
 #### GET /plants

@@ -1,9 +1,19 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+// Renders a PlantCard for each plant in the filtered plants list.
+function PlantList({ plants, toggleSoldOut, soldOut }) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+      {plants.map((plant) => (
+        <PlantCard
+          key={plant.id}
+          plant={plant}
+          toggleSoldOut={toggleSoldOut}
+          isSoldOut={soldOut.has(plant.id)}
+        />
+      ))}
+    </ul>
   );
 }
 

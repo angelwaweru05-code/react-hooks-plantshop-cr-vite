@@ -3,12 +3,13 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
+// Page layout composing the new plant form, search bar, and plant list, passing down handlers and state.
+function PlantPage({ plants, addPlant, toggleSoldOut, soldOut, searchQuery, setSearchQuery }) {
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      <NewPlantForm addPlant={addPlant} />
+      <Search value={searchQuery} onChange={setSearchQuery} />
+      <PlantList plants={plants} toggleSoldOut={toggleSoldOut} soldOut={soldOut} />
     </main>
   );
 }

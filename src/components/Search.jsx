@@ -1,6 +1,7 @@
 import React from "react";
 
-function Search() {
+// Controlled search input that tracks its value and notifies the parent of changes.
+function Search({ value, onChange }) {
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
@@ -8,7 +9,8 @@ function Search() {
         type="text"
         id="search"
         placeholder="Type a name to search..."
-        onChange={(e) => console.log("Searching...")}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
       />
     </div>
   );
